@@ -1,7 +1,8 @@
 ---
-published: false
+published: true
 ---
 ## Most used git commands
+![git.jpeg]({{site.baseurl}}/_posts/git.jpeg)
 
     $ git config --global user.name "Firstname Lastname" // set your username
     $ git config --global user.email "name@example.com" // set your email address
@@ -33,6 +34,3 @@ published: false
     $ git reset --hard HEAD^ // delete last commit from local repository. if the commit was already pushed in remote then you have to force push after this command.  use $ git push origin -f to force push to remote  
     $ git reset --hard HEAD~2 // deletes last two commits.
     $ git reset HEAD^ // uncommit the last commit, but keeps the changes
-    
-    
- 
