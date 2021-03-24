@@ -105,8 +105,8 @@ published: true
 
 ## Rebase
 	$ git rebase [branch name] // rebase a branch 
-    $ git rebase -- continue // to finish a rebase after resolving conflicts
-    $ git rebase -- abort // to completely undo the rebase
+    $ git rebase --continue // to finish a rebase after resolving conflicts
+    $ git rebase --abort // to completely undo the rebase
     
 ## Example Workflow to rebase master and feature/1 branch
 	$ git checkout master
