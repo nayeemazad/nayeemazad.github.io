@@ -1,6 +1,10 @@
 ---
 published: true
 ---
+## Installing git
+	$ sudo apt install git-all // If you’re on a Debian-based distribution, such as Ubuntu. 
+    $ git --version // check version
+    Check how to install git on other operation systems [Git installation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 ## Set your username
 	$ git config --global user.name "Firstname Lastname"
 
