@@ -16,9 +16,9 @@ published: true
 ## Add a file to staging area
 	$ git add [filename]
 
-## Add all files to staging area 
+## Add all files to staging area. Use any of the following two commands
 	$ git add -A 
-    $ git add . 
+    $ git add .
 
 ## Add commit message
 	$ git commit -m "message"
