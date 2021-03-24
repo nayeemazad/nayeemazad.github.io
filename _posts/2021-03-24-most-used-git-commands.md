@@ -2,7 +2,6 @@
 published: true
 ---
 ## Most used git commands
-![git.jpeg]({{site.baseurl}}/_posts/git.jpeg)
 
     $ git config --global user.name "Firstname Lastname" // set your username
     $ git config --global user.email "name@example.com" // set your email address
