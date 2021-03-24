@@ -96,3 +96,23 @@ published: true
 	$ git stash // git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.
     $ git stash pop //  throws away the (topmost, by default) stash after applying it
     $ git stash clear // deletes all stash
+
+## Inspecting changes
+	$ git diff
+
+## Viewing commit history
+	$ git log
+
+## Rebase
+	$ git rebase [branch name] // rebase a branch 
+    $ git rebase -- continue // to finish a rebase after resolving conflicts
+    $ git rebase -- abort // to completely undo the rebase
+    
+## Example Workflow to rebase master and feature/1 branch
+	$ git checkout master
+    $ git pull
+    $ git checkout feature/1
+    $ git rebase master
+    $ git checkout master
+    $ git rebase feature/1
+    $ git push
