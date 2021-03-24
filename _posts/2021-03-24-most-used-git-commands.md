@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-<div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">* Installing git</span>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">* Installing git</span>
 <span style="color: #888888">$ sudo apt install git-all // Use this command if you’re on a Debian-based distribution, such as Ubuntu. For other operating system follow https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</span>
 <span style="color: #888888">$ git --version // check version</span>
 
