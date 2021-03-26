@@ -18,7 +18,8 @@ $white: #fff;
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
-
+// custom font
+$customFont: normal normal 1em/1.2em monospace;
 // Mobile breakpoints
 @mixin mobile {
   @media screen and (max-width: 640px) {
