@@ -1,5 +1,6 @@
 ## Factory Method design pattern
-In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. 
+
+Factory Method design pattern is a creational pattern which defines an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. 
 
 
 Let's see an example of payment system where we can pay with different types of payment methods. 
