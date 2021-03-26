@@ -1,10 +1,8 @@
-## Factory Method design pattern
-
 Factory Method design pattern is a creational pattern which defines an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses. 
 
 
 Let's see an example of payment system where we can pay with different types of payment methods. 
-we will create a payment service and delegate its instantiation logic to Factories. Our project structure will look like this. 
+We will create a payment service and delegate its instantiation logic to Factories. Our project structure will look like this. 
 
 <!-- HTML generated using hilite.me --><div style="background: #000000; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #cccccc">├── composer.json</span>
 <span style="color: #cccccc">├── composer.lock</span>
