@@ -174,7 +174,52 @@ or just specify what we want.
 <span style="color: #000088;">$pizza</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #000088;">$pizzaBuilderObject</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
 
 
+Test cases:
 
+<pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #000000; font-weight: bold;">declare</span><span style="color: #009900;">&#40;</span>strict_types<span style="color: #339933;">=</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">namespace</span> App\BuilderPattern\Tests<span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #b1b100;">require_once</span> <span style="color: #0000ff;">'./vendor/autoload.php'</span><span style="color: #339933;">;</span> 
+<span style="color: #000000; font-weight: bold;">use</span> PHPUnit\Framework\TestCase<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">use</span> App\BuilderPattern\PizzaBuilder<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">use</span> App\BuilderPattern\Pizza<span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">class</span> BuilderPatternTest <span style="color: #000000; font-weight: bold;">extends</span> TestCase
+<span style="color: #009900;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000088;">$pizza</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> setUp<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#123;</span>
+        <span style="color: #000088;">$pizzaBuilderObject</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">new</span> PizzaBuilder<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">12</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
+            <span style="color: #339933;">-&gt;</span><span style="color: #004000;">setExtraCheese</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span>
+            <span style="color: #339933;">-&gt;</span><span style="color: #004000;">setBacon</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span>
+            <span style="color: #339933;">-&gt;</span><span style="color: #004000;">build</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">pizza</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #000088;">$pizzaBuilderObject</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> testIsObjectInstanceOfPizzaClass<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#123;</span>        
+        <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">assertInstanceOf</span><span style="color: #009900;">&#40;</span>Pizza<span style="color: #339933;">::</span><span style="color: #000000; font-weight: bold;">class</span><span style="color: #339933;">,</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">pizza</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> testPizzaHasExtraCheese<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#123;</span>        
+        <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">assertEquals</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">pizza</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getExtraCheese</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
+
+Execute tests:
+./vendor/bin/phpunit tests/BuilderPatternTest.php 
+PHPUnit 7.5.20 by Sebastian Bergmann and contributors.
+ 
+..                                                                  2 / 2 (100%)
+ 
+Time: 32 ms, Memory: 4.00 MB
+ 
+OK (2 tests, 2 assertions)
+ 
 
 
 
