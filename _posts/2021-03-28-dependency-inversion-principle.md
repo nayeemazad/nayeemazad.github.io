@@ -85,10 +85,13 @@ Let's refactor this. We will convert the logger class to an interface and logger
 
 Test cases
 <pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #000000; font-weight: bold;">declare</span><span style="color: #009900;">&#40;</span>strict_types<span style="color: #339933;">=</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000000; font-weight: bold;">namespace</span> App\DIP\Tests<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">namespace</span> App\Tests<span style="color: #339933;">;</span>
 &nbsp;
 <span style="color: #b1b100;">require_once</span> <span style="color: #0000ff;">'./vendor/autoload.php'</span><span style="color: #339933;">;</span> 
 <span style="color: #000000; font-weight: bold;">use</span> PHPUnit\Framework\TestCase<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">use</span> App\DIP\FileLogger<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">use</span> App\DIP\StdoutLogger<span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">use</span> App\DIP\LoggerManager<span style="color: #339933;">;</span>
 &nbsp;
 <span style="color: #000000; font-weight: bold;">class</span> DipTest <span style="color: #000000; font-weight: bold;">extends</span> TestCase
 <span style="color: #009900;">&#123;</span>
@@ -107,7 +110,10 @@ Test cases
 &nbsp;
         <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">assertRegExp</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'/logged in screen/'</span><span style="color: #339933;">,</span> <span style="color: #000088;">$loggerManager</span><span style="color: #339933;">-&gt;</span><span style="color: #990000;">log</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
     <span style="color: #009900;">&#125;</span>
-<span style="color: #009900;">&#125;</span></pre>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+&nbsp;</pre>
+
 Execute test case
 
 ./vendor/bin/phpunit tests/DipTest.php 
