@@ -1,6 +1,6 @@
-Builder pattern is a creational design pattern which seprates the contruction process of complex objects from its representation so that same contruction process can create different representation.
+Builder pattern is a creational design pattern which separates the contruction process of complex objects from its representation so that same contruction process can create different representation.
 
-Lets demonstrate thes with an example of Pizza.
+Let's demonstrate this with an example of Pizza.
 
 <pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> Pizza
 <span style="color: #009900;">&#123;</span>
@@ -35,7 +35,7 @@ Pizza class looks like this. Let's say we want to have a 12 inch pizza with cust
 
 <pre class="php" style="font-family:monospace;"><span style="color: #000088;">$pizza1</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">12</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
 
-This way, the Problem is that constructor params are not named here which is hard to maintain. It is not maintainable when object creation gets more complicated in future. 
+This way, the Problem is that constructor params are not named here which is hard to maintain. It will get more messy in the long run if requirements come to extend. 
 Now we can decide to have setters in the Pizza class and create object as following
 <pre class="php" style="font-family:monospace;"><span style="color: #000088;">$pizza1</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">12</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
 <span style="color: #000088;">$pizza1</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setExtraCheese</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
@@ -164,6 +164,15 @@ Now we can create pizza class object with builder as following
     <span style="color: #339933;">-&gt;</span><span style="color: #004000;">build</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
 &nbsp;
 <span style="color: #000088;">$pizza</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #000088;">$pizzaBuilderObject</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+
+or just specify what we want.
+<pre class="php" style="font-family:monospace;"><span style="color: #000088;">$pizzaBuilderObject</span> <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">new</span> PizzaBuilder<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">12</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #339933;">-&gt;</span><span style="color: #004000;">setExtraCheese</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #339933;">-&gt;</span><span style="color: #004000;">setBacon</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #339933;">-&gt;</span><span style="color: #004000;">build</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000088;">$pizza</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Pizza<span style="color: #009900;">&#40;</span><span style="color: #000088;">$pizzaBuilderObject</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+
 
 
 
