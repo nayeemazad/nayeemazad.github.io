@@ -137,8 +137,7 @@ StripeFactory.php
 <span style="color: #557799">?&gt;</span>
 </pre></div>
 
-
-Ok. we are done with the service and factories for the payment. Now write phpunit test cases to test the factory method. We will not directly instantiate the services, rather we should use the dedicated factories for the service. Factory will decide which concrete classes may I need to create class object.
+Test case:
 
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;?php</span> <span style="color: #008800; font-weight: bold">declare</span>(strict_types<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">1</span>);
 <span style="color: #008800; font-weight: bold">namespace</span> App\Tests;
